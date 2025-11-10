@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Mitra App</title>
+</head>
+<body>
+  <h2>ทดสอบเชื่อม Mitra App</h2>
+  <button onclick="loadData()">โหลดข้อมูลจาก Mitra App</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function loadData() {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbyFInvD05D0s8nfU32nz_z1u-DFeCravXzeWePp18-E6OAjfRl0UPpIlWRxC4xo2XEMAw/exec");
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
